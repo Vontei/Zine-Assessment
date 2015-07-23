@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
     if(err){
       res.render('index')
     }else{
-  res.render('index', {articles: data });
+  res.render('index', {articles: data.sort().reverse()});
   }
   })
 });

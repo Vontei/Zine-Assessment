@@ -8,9 +8,14 @@ block content
         a(href='/') The Zine
     div(class='listing')  
       div(class='subheader' style='background-image: url('+ url + ");")
-        h2(class='highlist') #{title}
-        h2(class='edit') 
-          a(href='/show/'+ id + '/update') Edit
+        if img
+          h2(class='highlist' style='color:white') #{title}
+          h2(class='edit' style='color:white') 
+            a(href='/show/'+ id + '/update') Edit
+        if !img
+          h2(class='highlist' style='color:black') #{title}
+          h2(class='edit' style='color:black') 
+            a(href='/show/'+ id + '/update') Edit
       div(class='exy')
         p #{excerpt}
         p #{body}
