@@ -157,3 +157,7 @@ textarea{
 .checkers .x{
   float: right;
 }
+
+.error{
+  color: red;
+}

@@ -35,7 +35,23 @@ router.get('/new', function(req,res,next){
 
 
 router.post('/new', function(req,res,next){
+  var error = []
+  if(req.body.title.length<2 ){
+    error.push('Your title cannot be empty')
+  }
+    if(req.body.body.length<2){
+      error.push('Your body cannot be empty')
+  }
 
+  if(req.body.excerpt.length <2){
+      error.push('Your excerpt cannot be empty')
+  }
+
+  if(error.length>=1){
+    res.render('new', {error: error})
+  }
+
+  else {
   Article.create({
     title: req.body.title,
     artUrl: req.body.url || 'http://www.stitchdesignco.com/content/uploads/2011/11/Pattern3.jpg',
@@ -48,8 +64,9 @@ router.post('/new', function(req,res,next){
     } else{
       res.redirect('/')
     }
-  }
+    }
   )
+  }
 })
 
 
@@ -78,6 +95,26 @@ router.get('/show/:id/update', function(req,res,next){
 
 
 router.post('/show/:id/update',function(req,res,next){
+  var error = []
+  if(req.body.title.length<2 ){
+    error.push('Your title cannot be empty')
+  }
+  if(req.body.body.length<2){
+    error.push('Your body cannot be empty')
+  }
+  if(req.body.excerpt.length <2){
+    error.push('Your excerpt cannot be empty')
+  }
+  if(error.length>=1){
+    Article.findById({
+      _id: req.params.id
+    },
+    function(err,data){
+      res.render('update',{error: error, id: req.params.id, title: data.title, url: data.artUrl,  img: data.backgroundImg, excerpt:data.excerpt, body:data.body})
+    })
+  }
+
+  else{
   Article.update({
       _id: req.params.id
     },
@@ -92,7 +129,12 @@ router.post('/show/:id/update',function(req,res,next){
       }
     }
   )
+}
+
 })
+
+
+
 
 
 router.post('/show/:id/delete',function(req,res,next){

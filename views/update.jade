@@ -7,7 +7,12 @@ block content
     div(class='header')  
       h1 
         a(href='/')  The Zine
-
+    div(class='error')
+      if error
+        p Please correct errors below
+        each val in error
+          ul
+            li= val
     div(id='form')
       div(class='linebreak')
         h1(id='title') Update Article
