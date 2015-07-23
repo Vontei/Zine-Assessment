@@ -5,7 +5,6 @@ mongoose.connect(process.env.MONGOLAB_URI || process.env.KEY);
 mongoose.set('debug', true);
 
 
-
 var articlesSchema = new mongoose.Schema({
   title: String,
   artUrl: String,
@@ -76,9 +75,6 @@ router.get('/show/:id', function(req,res,next){
   },
   function(err,data){
     var x = data.backgroundImg;
-      // if(x===true){
-      //   data.title.style.color = 'white';
-      // }
     res.render('show', {id: req.params.id, title: data.title, url: data.artUrl, img: data.backgroundImg, excerpt: data.excerpt, body: data.body})
   })
 })
@@ -134,9 +130,6 @@ router.post('/show/:id/update',function(req,res,next){
 })
 
 
-
-
-
 router.post('/show/:id/delete',function(req,res,next){
   Article.remove({
     _id: req.params.id
@@ -147,7 +140,6 @@ router.post('/show/:id/delete',function(req,res,next){
     }
   })
 })
-
 
 
 

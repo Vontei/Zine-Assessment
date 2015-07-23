@@ -10,7 +10,6 @@ block content
       each val in articles
         div(class='listing')  
           div(class='subheader' style='background-image: url('+ val.artUrl + ");")
-            //- img(src=val.artUrl class='images' width='100%' height='100%')
             h2(class='highlist')
               if val.backgroundImg
                 a(href='/show/' + val._id style='color:white')= val.title
@@ -18,9 +17,6 @@ block content
                 a(href='/show/' + val._id style='color:black')= val.title
 
           div(class='exy')
-            p= val.excerpt
-            
-          
-          
+            p= val.excerpt    
     br      
     a(href='/new' id='create') Create an Article
