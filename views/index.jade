@@ -9,7 +9,7 @@ block content
     if articles
       each val in articles
         div(class='listing')  
-          div(class='subheader' style='background-image: url('+ val.artUrl + ");")
+          div(class='subheader' style='background-image: url('+ val.artUrl + "); background-size:cover; background-repeat:no-repeat;")
             h2(class='highlist')
               if val.backgroundImg
                 a(href='/show/' + val._id style='color:white')= val.title
