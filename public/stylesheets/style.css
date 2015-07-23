@@ -1,0 +1,133 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../images/congruent_outline.png');
+   }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#create{
+  color:rgb(29, 217, 217);
+}
+
+#page{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header{
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+background-image: url(https://unsplash.imgix.net/photo-1429198739803-7db875882052?dpr=2&fit=crop&fm=jpg&h=1575&q=75&w=1050);
+ border: 1px solid black;
+  text-align: right;
+}
+
+.header h1{
+  padding-right: 25px;
+}
+
+
+.linebreak{
+  border-bottom: 2px solid black;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#form-container{
+  width: 75%;
+height: 400px;
+background-color: white;
+padding-top: 50px;
+}
+
+.row{
+  width: 100%;
+  height: 50px;
+}
+
+.label{
+  width:15%;
+  float: left;
+}
+
+.input{
+  width: 80%;
+  float: right;
+
+}
+.hi{
+  height: 100px;
+}
+
+
+#form{
+  margin-top: 25px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+label{
+  font-size: 1.2em;
+  padding-left: 20px;
+}
+
+input{
+width:100%;
+}
+
+textarea{
+  width: 100%;
+}
+
+.submit{
+  width: 100px;
+}
+
+
+.listed{
+}
+
+
+
+.highlist{
+  padding-left: 10px;
+  padding-right: 10px;
+  float:left;
+}
+.subheader {
+  width: 100%;
+ border: 1px solid black;
+  text-align: left;
+  height: 100px;
+}
+
+.listing{
+  margin-top: 25px;
+  background-color: white;
+}
+
+.exy{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.edit{
+  float:right;
+  padding-right: 10px;
+
+}
+
+#delete{
+  width: 75px;
+  height: 40px;
+  color: white;
+  background-color: red;
+
+}

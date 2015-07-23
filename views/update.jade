@@ -1,0 +1,50 @@
+extends layout
+
+block content
+
+
+  div(id='page')
+    div(class='header')  
+      h1 
+        a(href='/')  The Zine
+
+    div(id='form')
+      div(class='linebreak')
+        h1(id='title') Update Article
+      div(id='form-container')
+        form(action='/show/'+ id+ "/update", method='post')
+          div.row
+            div.label
+              label Title
+            div.input
+              input(type='text' name='title' value=title)
+          div.row
+            div.label
+              label URL
+            div.input
+              input(type='text' name='url' value=url)
+          div.row
+            div.label
+              label  
+            div.input
+              input(type='checkbox' name='img' checked=img)
+              label Background Image
+          div.row
+            div.label
+              label Excerpt
+            div.input
+              textarea(name='excerpt' ) #{excerpt}
+          div.row
+            div.label
+              label Body
+            div.input
+              textarea(name='body' ) #{body}
+          div.row
+            div.label
+            div.input
+              input(type='submit' name='submit' class='submit' value='Update Article')
+
+        div.row
+          div.input
+            form(action='/show/' + id + '/delete' method='post')
+              input(type='submit' id='delete' value='DELETE')

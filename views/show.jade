@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  div(id='page')
+    div(class='header')  
+      h1 
+        a(href='/') The Zine
+    div(class='listing')  
+      div(class='subheader')
+        h2(class='highlist') #{title}
+        h2(class='edit') 
+          a(href='/show/'+ id + '/update') Edit
+      div(class='exy')
+        p #{excerpt}
+        p #{body}

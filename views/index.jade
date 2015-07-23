@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div(id='page')
+    div(class='header')  
+      h1 
+        a(href='/') The Zine
+    
+    if articles
+      each val in articles
+        div(class='listing')  
+          div(class='subheader')
+            img(src=val.artUrl class='images' width='100%' height='100%')
+            h2(class='highlist')
+              a(href='/show/' + val._id)= val.title
+          div(class='exy')
+            p= val.excerpt
+            
+          
+          
+    br      
+    a(href='/new' id='create') Create an Article
