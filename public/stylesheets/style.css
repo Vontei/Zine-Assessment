@@ -102,15 +102,18 @@ textarea{
   float:left;
 }
 .subheader {
+  padding-top: 25px;
   width: 100%;
- border: 1px solid black;
   text-align: left;
-  height: 100px;
+  height: 70px;
+  padding-bottom: 0;
+
 }
 
 .listing{
   margin-top: 25px;
   background-color: white;
+  padding-bottom: 2px;
 }
 
 .exy{

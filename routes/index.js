@@ -57,7 +57,7 @@ router.get('/show/:id', function(req,res,next){
     _id: req.params.id
   },
   function(err,data){
-    res.render('show', {id: data._id, title: data.title, url: data.artUrl, img: data.backgroundImg, excerpt: data.excerpt, body: data.body})
+    res.render('show', {id: req.params.id, title: data.title, url: data.artUrl, img: data.backgroundImg, excerpt: data.excerpt, body: data.body})
   })
 })
 
