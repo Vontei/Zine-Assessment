@@ -35,9 +35,10 @@ router.get('/new', function(req,res,next){
 
 
 router.post('/new', function(req,res,next){
+
   Article.create({
     title: req.body.title,
-    artUrl: req.body.url,
+    artUrl: req.body.url || 'http://www.stitchdesignco.com/content/uploads/2011/11/Pattern3.jpg',
     backgroundImg: req.body.img,
     excerpt: req.body.excerpt,
     body: req.body.body
@@ -57,6 +58,10 @@ router.get('/show/:id', function(req,res,next){
     _id: req.params.id
   },
   function(err,data){
+    var x = data.backgroundImg;
+      // if(x===true){
+      //   data.title.style.color = 'white';
+      // }
     res.render('show', {id: req.params.id, title: data.title, url: data.artUrl, img: data.backgroundImg, excerpt: data.excerpt, body: data.body})
   })
 })

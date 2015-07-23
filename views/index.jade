@@ -12,7 +12,11 @@ block content
           div(class='subheader' style='background-image: url('+ val.artUrl + ");")
             //- img(src=val.artUrl class='images' width='100%' height='100%')
             h2(class='highlist')
-              a(href='/show/' + val._id)= val.title
+              if val.backgroundImg
+                a(href='/show/' + val._id style='color:white')= val.title
+              if !val.backgroundImg
+                a(href='/show/' + val._id style='color:black')= val.title
+
           div(class='exy')
             p= val.excerpt
             
